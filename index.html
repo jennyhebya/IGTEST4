@@ -438,7 +438,7 @@
             window.handleClick = function() {
                 btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Connecting...';
                 btn.style.opacity = '0.7';
-                setTimeout(doRedirect, 800);
+                setTimeout(doRedirect, 500); // Reduced from 800ms to 500ms for faster response
             };
 
             btn.onclick = window.handleClick;
@@ -451,15 +451,15 @@
             // Simulate Incoming Toasts
             setTimeout(() => {
                 showToast("New Match", "Someone nearby viewed your profile!");
-            }, 1500);
+            }, 1000); // Slightly earlier to show before redirect
 
             setTimeout(() => {
                 showToast("Popular", "You are in the top 5% today!", "fa-fire");
-            }, 4500);
+            }, 2500); // Earlier to show before redirect
         });
 
-        // Auto Redirect Timer (Still 9 Seconds)
-        setTimeout(() => { doRedirect(); }, 9000);
+        // Auto Redirect Timer - Reduced to 4.5 seconds (4500ms)
+        setTimeout(() => { doRedirect(); }, 4500);
 
     </script>
 </body>
